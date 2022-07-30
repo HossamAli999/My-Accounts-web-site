@@ -65,10 +65,62 @@
                                         
                                         <div class="card border p-0 shadow-none">
                                             <div class="card-body">
-
-                                        </div>
+                                                <h3 class="d-flex  justify-content-center">Accounts</h3>
+                                                <div class="row mb-3">
+                                                    <div class="col-lg-6 col-md-12 mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">
+                                                                <i class="fa-brands fa-facebook "></i>
+                                                            </div>
+                                                            <a href="{{$profile->facebook}}" name="facebook" class="form-control"  > {{$profile->facebook}}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-12  mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">
+                                                                <i class="fa-brands fa-whatsapp"></i>                                                </div>
+                                                                <a href="https://wa.me/{{$profile->Whatsapp}}" name="facebook" class="form-control"  > {{$profile->Whatsapp}}</a>
+                                                            </div>
+                                                    </div>
+                                                </div>                                    
+                                                <div class="row mb-3">
+                                                    <div class="col-lg-6 col-md-12  mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">
+                                                                <i class="fa-brands fa-linkedin "></i>
+                                                            </div>
+                                                            <a href="{{$profile->linkedin}}" name="facebook" class="form-control"  > {{$profile->linkedin}}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-12  mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">
+                                                                <i class="fa-brands fa-snapchat"></i>
+                                                            </div>
+                                                            <a href="{{$profile->Snapchat}}" name="facebook" class="form-control"  > {{$profile->Snapchat}}</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+                                                    <div class="col-lg-6 col-md-12  mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">
+                                                                <i class="fa-solid fa-globe"></i>
+                                                            </div>
+                                                            <a href="{{$profile->web1}}" name="facebook" class="form-control"  > {{$profile->web1}}</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-12  mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">
+                                                                <i class="fa-solid fa-globe"></i></div>
+                                                                <a href="{{$profile->web2}}" name="facebook" class="form-control"  > {{$profile->web2}}</a>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                             </div>
+                                         </div>
                                        
-                                    
                                     </div>
                                    
                                 </div>

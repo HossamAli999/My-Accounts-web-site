@@ -20,16 +20,16 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('verified');;
 // Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index'])->name('profile');
 // Route::get('/profile/edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
 // Route::post('/profile/update', [App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
 // Route::get('/profile/delete', [App\Http\Controllers\ProfileController::class, 'delete'])->name('profile.delete');
-Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create');
-Route::post('/profile/store', [ProfileController::class, 'store'])->name('profile.store');
+Route::get('/profile/create', [ProfileController::class, 'create'])->name('profile.create')->middleware('verified');;
+Route::post('/profile/store', [ProfileController::class, 'store'])->name('profile.store')->middleware('verified');;
 Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile.show');
-Route::get('/profile/{id}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
-Route::post('/profile/{id}/update', [ProfileController::class, 'update'])->name('profile.update');
+Route::get('/profile/{id}/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('verified');;
+Route::post('/profile/{id}/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('verified');;
 
 
 // Route::resource('profile',ProfileController::class)->middleware('verified');
