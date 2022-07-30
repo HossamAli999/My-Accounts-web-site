@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
+    <link href="{{asset('../assets/css/style.css')}}" rel="stylesheet" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -71,6 +71,12 @@
                                     </form>
                                 </div>
                             </li>
+                            @if ($profile != null)
+                               <li class="nav-item">
+                                <a class="nav-link" href="{{ route('profile.show',$profile->id) }}">{{ __('Profile') }}</a>
+                            </li> 
+                            @endif
+                            
                         @endguest
                     </ul>
                 </div>
@@ -81,6 +87,19 @@
             @yield('content')
         </main>
     </div>
+ <!-- FOOTER -->
+ <footer class="footer">
+    <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-md-12 col-sm-12 text-center">
+                Copyright © 2022 <a href="http://www.hossamali.codes">Hossamali</a>. Designed with <span
+                    class="fa fa-heart text-danger"></span> by <a href="http://www.hossamali.codes"> Hossamali </a> All rights reserved.
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- FOOTER END -->
+    <script src="https://kit.fontawesome.com/06cccea7d4.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 </html>
