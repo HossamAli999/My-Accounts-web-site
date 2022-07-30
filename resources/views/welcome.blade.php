@@ -55,7 +55,7 @@
                                 @if (Route::has('login'))
                                
                                     @auth
-                                        <a href="{{ url('/home') }}" class="btn btn-success">Home  <i class="fa-solid fa-house-user"></i></a>
+                                        <a href="{{ url('/home') }}" class="btn btn-success">My profile  <i class="fa-solid fa-house-user"></i></a>
                                         
                                         @else
                                         <a href="{{ route('login') }}" class="btn btn-success">Login <i class="fa-solid fa-right-to-bracket"></i></a> 

@@ -51,9 +51,11 @@ class ProfileController extends Controller
         profile::create([
             'name' => $request->input('name'),
             'token' => auth()->user()->token,
+            'email' => auth()->user()->email,
             'user_id' => auth()->user()->id,
             'Instagram' => $request->input('Instagram'),
             'Phone' => $request->input('Phone'),
+            'blood_type' => $request->input('blood_type'),
             'Snapchat' => $request->input('Snapchat'),
             'Whatsapp' => $request->input('Whatsapp'),
             'facebook' => $request->input('facebook'),
@@ -67,7 +69,8 @@ class ProfileController extends Controller
             'web5' => $request->input('web5'),
             'web6' => $request->input('web6'),
         ]);
-        return redirect()->back()->with('success','Profile Created Successfully');
+        // return redirect()->back()->with('success','Profile Created Successfully');
+        return redirect()->route('home')->with('success','Profile Created Successfully');
     }
     
 
@@ -84,9 +87,12 @@ class ProfileController extends Controller
         // if ($profile->token = Auth::user()->token) {
             # code...
             // $profile = profile::where('token',auth()->user()->token)->first();
-            $profile = profile::get();
+            // $profiles = profile::get();
             // return view("profile.show",compact('profile','user'));
-            return view("profile.show",compact('profile'));
+            // dd(request('token'));
+            $profilee= profile::where('token',request('token'))->first();
+
+            return view("profile.show",compact('profilee'));
         // } else {
             # code...
         // }

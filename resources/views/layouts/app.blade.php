@@ -71,11 +71,11 @@
                                     </form>
                                 </div>
                             </li>
-                            @if ($profile != null)
+                            {{-- @if ($profilee != null)
                                <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.show',$profile->token) }}">{{ __('Profile') }}</a>
+                                <a class="nav-link" href="{{ route('profile.show',$profilee->token) }}">{{ __('Profile') }}</a>
                             </li> 
-                            @endif
+                            @endif --}}
                             
                         @endguest
                     </ul>

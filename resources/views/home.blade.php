@@ -45,7 +45,7 @@
                                         <div class="col-lg-6 col-md-12">
                                             <div class="form-group">
                                                 <label for="exampleInputname">Your Name</label>
-                                                <input type="text" class="form-control" id="exampleInputname" placeholder="Your Name" name="name">
+                                                <input type="text" class="form-control" id="exampleInputname" placeholder="Your Name" value="{{auth()->user()->name}}" name="name">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-12">
@@ -123,6 +123,26 @@
                                                     <i class="fa-solid fa-globe"></i></div>
                                                 <input type="text" name="web2" class="form-control" placeholder="Your web url" >
                                             </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <div class="col-lg-6 col-md-12  mb-2">
+                                            <div class="input-group">
+                                                <div class="input-group-text">
+                                                    Blood type <br>
+                                                </div>
+                                                    <select name="blood_type" required autocomplete="blood_type">
+                                                        <option value="Unknown">Unknown</option>
+                                                        <option value="A Positive">A Positive</option>
+                                                        <option value="A Negative">A Negative</option>
+                                                        <option value="B Positive">B Positive</option>
+                                                        <option value="B Negative">B Negative</option>
+                                                        <option value="AB Positive">AB Positive</option>
+                                                        <option value="AB Negative">AB Negative</option>
+                                                        <option value="O Positive">O Positive</option>
+                                                        <option value="O Negative">O Negative</option>
+                                                    </select> 
+                                                </div>
                                         </div>
                                     </div>
                                    

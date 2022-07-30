@@ -17,6 +17,10 @@ return new class extends Migration
             $table->id();
             $table->longText('token')->nullable();
             $table->string('name');
+            $table->string('email');
+            $table->string('about')->nullable();
+            $table->string('blood_type')->nullable();
+            $table->string('youtube')->nullable();
             $table->integer('user_id');
             $table->string('Instagram')->nullable();
             $table->string('Phone')->nullable();
