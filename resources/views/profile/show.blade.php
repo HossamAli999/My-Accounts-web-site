@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+ 
+@foreach ( $profile as $profile )
+    
+@if ($profile->token == request('token'))
+    
 
 
             <!--app-content open-->
@@ -67,56 +72,115 @@
                                             <div class="card-body">
                                                 <h3 class="d-flex  justify-content-center">Accounts</h3>
                                                 <div class="row mb-3">
-                                                    <div class="col-lg-6 col-md-12 mb-2">
+                                                    
+                                                    @if ($profile->email != null)
+                                                       <div class="col-lg-6 col-md-12 mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">
+                                                                <i class="fa-brands fa-email "></i>
+                                                            </div>
+                                                            <a href="{{$profile->email}}" class="form-control"  > {{$profile->email}}</a>
+                                                        </div>
+                                                    </div>
+                                                    @endif
+
+                                                    @if ($profile->facebook != null)
+                                                       <div class="col-lg-6 col-md-12 mb-2">
                                                         <div class="input-group">
                                                             <div class="input-group-text">
                                                                 <i class="fa-brands fa-facebook "></i>
                                                             </div>
-                                                            <a href="{{$profile->facebook}}" name="facebook" class="form-control"  > {{$profile->facebook}}</a>
+                                                            <a href="{{$profile->facebook}}" class="form-control"  > {{$profile->facebook}}</a>
                                                         </div>
                                                     </div>
+                                                    @endif
+                                                    
+                                                    @if ($profile->Whatsapp != null)
                                                     <div class="col-lg-6 col-md-12  mb-2">
                                                         <div class="input-group">
                                                             <div class="input-group-text">
                                                                 <i class="fa-brands fa-whatsapp"></i>                                                </div>
-                                                                <a href="https://wa.me/{{$profile->Whatsapp}}" name="facebook" class="form-control"  > {{$profile->Whatsapp}}</a>
+                                                                <a href="https://wa.me/{{$profile->Whatsapp}}" class="form-control"  > {{$profile->Whatsapp}}</a>
                                                             </div>
-                                                    </div>
-                                                </div>                                    
-                                                <div class="row mb-3">
+                                                    </div> 
+                                                    @endif                         
+                                              
+                                                    @if ($profile->linkedin != null)
                                                     <div class="col-lg-6 col-md-12  mb-2">
                                                         <div class="input-group">
                                                             <div class="input-group-text">
                                                                 <i class="fa-brands fa-linkedin "></i>
                                                             </div>
-                                                            <a href="{{$profile->linkedin}}" name="facebook" class="form-control"  > {{$profile->linkedin}}</a>
+                                                            <a href="{{$profile->linkedin}}"  class="form-control"  > {{$profile->linkedin}}</a>
                                                         </div>
                                                     </div>
+                                                    @endif
+
+                                                    @if ($profile->Snapchat != null)
                                                     <div class="col-lg-6 col-md-12  mb-2">
                                                         <div class="input-group">
                                                             <div class="input-group-text">
                                                                 <i class="fa-brands fa-snapchat"></i>
                                                             </div>
-                                                            <a href="{{$profile->Snapchat}}" name="facebook" class="form-control"  > {{$profile->Snapchat}}</a>
+                                                            <a href="{{$profile->Snapchat}}"  class="form-control"  > {{$profile->Snapchat}}</a>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="row mb-3">
+                                                    @endif
+
+                                                    @if ($profile->twitter != null)
+                                                    <div class="col-lg-6 col-md-12  mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">
+                                                                <i class="fa-brands fa-twitter "></i>
+                                                            </div>
+                                                            <a href="{{$profile->twitter}}"  class="form-control"  > {{$profile->twitter}}</a>
+                                                        </div>
+                                                    </div>
+                                                    @endif
+
+                                                    @if ($profile->github != null)
+                                                    <div class="col-lg-6 col-md-12  mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">
+                                                                <i class="fa-brands fa-github"></i>
+                                                            </div>
+                                                            <a href="{{$profile->github}}"  class="form-control"  > {{$profile->github}}</a>
+                                                        </div>
+                                                    </div>
+                                                    @endif
+
+                                                    @if ($profile->Instagram != null)
+                                                    <div class="col-lg-6 col-md-12  mb-2">
+                                                        <div class="input-group">
+                                                            <div class="input-group-text">
+                                                                <i class="fa-brands fa-instagram"></i>
+                                                            </div>
+                                                            <a href="{{$profile->Instagram}}"  class="form-control"  > {{$profile->Instagram}}</a>
+                                                        </div>
+                                                    </div>
+                                                    @endif
+                                              
+                                                    @if ($profile->web1 != null)
                                                     <div class="col-lg-6 col-md-12  mb-2">
                                                         <div class="input-group">
                                                             <div class="input-group-text">
                                                                 <i class="fa-solid fa-globe"></i>
                                                             </div>
-                                                            <a href="{{$profile->web1}}" name="facebook" class="form-control"  > {{$profile->web1}}</a>
+                                                            <a href="{{$profile->web1}}"  class="form-control"  > {{$profile->web1}}</a>
                                                         </div>
                                                     </div>
+                                                    @endif
+
+                                                    @if ($profile->web2 != null)
                                                     <div class="col-lg-6 col-md-12  mb-2">
                                                         <div class="input-group">
                                                             <div class="input-group-text">
                                                                 <i class="fa-solid fa-globe"></i></div>
-                                                                <a href="{{$profile->web2}}" name="facebook" class="form-control"  > {{$profile->web2}}</a>
+                                                                <a href="{{$profile->web2}}"  class="form-control"  > {{$profile->web2}}</a>
                                                             </div>
                                                     </div>
+                                                    @endif
+
                                                 </div>
                                              </div>
                                          </div>
@@ -135,7 +199,173 @@
             </div>
             <!--app-content closed-->
         </div>
+@else
 
-
+@endif
+@endforeach
 
 @endsection
+{{-- 
+@if ($profile->facebook != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-facebook "></i>
+     </div>
+     <a href="{{$profile->facebook}}" class="form-control"  > {{$profile->facebook}}</a>
+ </div>
+</div>
+@endif
+
+@if ($profile->twitter != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-twitter "></i>
+     </div>
+     <a href="{{$profile->twitter}}" class="form-control"  > {{$profile->twitter}}</a>
+ </div>
+@endif
+
+@if ($profile->instagram != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-instagram "></i>
+     </div>
+     <a href="{{$profile->instagram}}" class="form-control"  > {{$profile->instagram}}</a>
+ </div>
+@endif
+
+@if ($profile->linkedin != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-linkedin "></i>
+     </div>
+     <a href="{{$profile->linkedin}}" class="form-control"  > {{$profile->linkedin}}</a>
+ </div> 
+
+@endif
+
+@if ($profile->youtube != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-youtube "></i>
+     </div>
+     <a href="{{$profile->youtube}}" class="form-control"  > {{$profile->youtube}}</a>
+ </div>
+ 
+@endif
+@if ($profile->website != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-website "></i>
+     </div>
+     <a href="{{$profile->website}}" class="form-control"  > {{$profile->website}}</a>
+ </div>
+ 
+@endif
+@if ($profile->email != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-envelope "></i>
+     </div>
+     <a href="{{$profile->email}}" class="form-control"  > {{$profile->email}}</a>
+ </div>
+ 
+@endif
+@if ($profile->phone != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-phone "></i>
+     </div>
+     <a href="{{$profile->phone}}" class="form-control"  > {{$profile->phone}}</a>
+ </div>
+ 
+@endif
+@if ($profile->address != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-map-marker "></i>
+     </div>
+     <a href="{{$profile->address}}" class="form-control"  > {{$profile->address}}</a>
+ </div>
+ 
+@endif
+@if ($profile->about != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-info-circle "></i>
+     </div>
+     <a href="{{$profile->about}}" class="form-control"  > {{$profile->about}}</a>
+ </div>
+ 
+@endif
+@if ($profile->birthday != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-birthday-cake "></i>
+     </div>
+     <a href="{{$profile->birthday}}" class="form-control"  > {{$profile->birthday}}</a>
+ </div>
+ 
+@endif
+@if ($profile->religion != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-star "></i>
+     </div>
+     <a href="{{$profile->religion}}" class="form-control"  > {{$profile->religion}}</a>
+ </div>
+ 
+@endif
+@if ($profile->blood_type != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-tint "></i>
+     </div>
+     <a href="{{$profile->blood_type}}" class="form-control"  > {{$profile->blood_type}}</a>
+ </div>
+ 
+@endif
+@if ($profile->hobby != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-heart "></i>
+     </div>
+     <a href="{{$profile->hobby}}" class="form-control"  > {{$profile->hobby}}</a>
+ </div>
+ 
+@endif
+@if ($profile->interest != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-heart "></i>
+     </div>
+     <a href="{{$profile->interest}}" class="form-control"  > {{$profile->interest}}</a>
+ </div>
+ 
+@endif
+@if ($profile->favorite_food != null)
+<div class="col-lg-6 col-md-12 mb-2">
+ <div class="input-group">
+     <div class="input-group-text">
+         <i class="fa-brands fa-heart "></i>
+     </div>
+     <a href="{{$profile->favorite_food}}" class="form-control"  > {{$profile->favorite_food}}</a>
+ </div>
+ 
+@endif --}}
+

@@ -50,6 +50,7 @@ class ProfileController extends Controller
 
         profile::create([
             'name' => $request->input('name'),
+            'token' => auth()->user()->token,
             'user_id' => auth()->user()->id,
             'Instagram' => $request->input('Instagram'),
             'Phone' => $request->input('Phone'),
@@ -79,9 +80,17 @@ class ProfileController extends Controller
      */
     public function show(profile $profile)
     {
-        $user=Auth::user()->email;
-        $profile = profile::where('id',auth()->user()->id)->first();
-        return view("profile.show",compact('profile','user'));
+        // $user=Auth::user()->token;
+        // if ($profile->token = Auth::user()->token) {
+            # code...
+            // $profile = profile::where('token',auth()->user()->token)->first();
+            $profile = profile::get();
+            // return view("profile.show",compact('profile','user'));
+            return view("profile.show",compact('profile'));
+        // } else {
+            # code...
+        // }
+        
         
     }
 

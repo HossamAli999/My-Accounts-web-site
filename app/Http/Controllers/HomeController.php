@@ -26,12 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user=Auth::user()->id;
-        $profile = profile::where("id",$user)->first();
+        $user=Auth::user()->token;
+        $profile = profile::where("token",$user)->first();
         if($profile==null){
             return view('home',compact('profile'));
         }
         // if have profile then redirect to profile page
-        return redirect()->route('profile.show',$profile->id);
+        return redirect()->route('profile.show',$profile->token);
     }
 }

@@ -73,7 +73,7 @@
                             </li>
                             @if ($profile != null)
                                <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.show',$profile->id) }}">{{ __('Profile') }}</a>
+                                <a class="nav-link" href="{{ route('profile.show',$profile->token) }}">{{ __('Profile') }}</a>
                             </li> 
                             @endif
                             

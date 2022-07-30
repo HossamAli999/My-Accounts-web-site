@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
@@ -65,8 +66,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $token = Str::random(12) .substr( time() , 6, 9);
         return User::create([
             'name' => $data['name'],
+            'token' => $token,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
