@@ -105,7 +105,7 @@
                                                 <div class="d-flex  justify-content-center" >
                                                     {!! '<'.'?xml version="1.0"?>' !!} <!-- to make the qr code work -->
                                                     {{-- <img src="data:image/png;base64,{{ base64_encode( QrCode::format('png')->size(200)->merge(public_path('logo.jpg'),0.3,true)->style('dot')->generate(Request::url()))}}" alt="" srcset=""> --}}
-                                                    {{-- <img src="data:image/png;base64,{{ 
+                                                    <img src="data:image/png;base64,{{ 
                                                     base64_encode( QrCode::format('png')
                                                     ->size(200)
                                                     ->errorCorrection('H')
@@ -113,17 +113,17 @@
                                                     ->style('dot')
                                                     ->eye('square')
                                                     ->generate(Request::url()))
-                                                    }}" alt="" srcset=""> --}}
-                                                    {!! QrCode::size(100)
+                                                    }}" alt="" srcset="">
+                                                    {{-- {!! QrCode::size(100)
                                                     ->format('svg')
                                                     ->size(200)
                                                     ->errorCorrection('H')
                                                     ->style('dot')
                                                     ->eye('square')
-                                                    ->generate(Request::url()); !!}
+                                                    ->generate(Request::url()); !!} --}}
 
                                                     {{-- generate QrCode  --}}
-                                                    
+
                                                 </div>                                                
 
 
