@@ -6,14 +6,14 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "ext-imagick": "*",
         "biscolab/laravel-recaptcha": "^5.4",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
-        "ext-imagick": "*",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "laravel/ui": "*",
-        "simplesoftwareio/simple-qrcode": "~4"
+        "simplesoftwareio/simple-qrcode": "^4.2"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

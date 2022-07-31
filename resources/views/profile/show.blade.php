@@ -121,7 +121,14 @@
                                                     ->style('dot')
                                                     ->eye('square')
                                                     ->generate(Request::url()); !!}
-                                                </div>
+
+                                                    {{-- generate QrCode  --}}
+                                                    
+                                                </div>                                                
+
+
+
+
                                             </div>
                                         </div>
                                        
