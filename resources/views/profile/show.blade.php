@@ -51,31 +51,31 @@
                                                         @elseif($profilee->blood_type == 'B Negative')
                                                         <div class="col-lg-2 col-md-2">
                                                             <div class="avatar-md profile-user-wid mb-4">
-                                                                <img src="{{ asset('images/blood/Bp.png') }}" alt="" class="img-fluid">
+                                                                <img src="{{ asset('images/blood/Bn.png') }}" alt="" class="img-fluid">
                                                             </div>
                                                         </div>
                                                         @elseif($profilee->blood_type == 'AB Positive')
                                                         <div class="col-lg-2 col-md-2">
                                                             <div class="avatar-md profile-user-wid mb-4">
-                                                                <img src="{{ asset('images/blood/Bp.png') }}" alt="" class="img-fluid">
+                                                                <img src="{{ asset('images/blood/ABp.png') }}" alt="" class="img-fluid">
                                                             </div>
                                                         </div>
                                                         @elseif($profilee->blood_type == 'AB Negative')
                                                         <div class="col-lg-2 col-md-2">
                                                             <div class="avatar-md profile-user-wid mb-4">
-                                                                <img src="{{ asset('images/blood/Bp.png') }}" alt="" class="img-fluid">
+                                                                <img src="{{ asset('images/blood/ABn.png') }}" alt="" class="img-fluid">
                                                             </div>
                                                         </div>
                                                         @elseif($profilee->blood_type == 'O Positive')
                                                         <div class="col-lg-2 col-md-2">
                                                             <div class="avatar-md profile-user-wid mb-4">
-                                                                <img src="{{ asset('images/blood/Bp.png') }}" alt="" class="img-fluid">
+                                                                <img src="{{ asset('images/blood/Op.png') }}" alt="" class="img-fluid">
                                                             </div>
                                                         </div>
                                                         @elseif($profilee->blood_type == 'O Negative')
                                                         <div class="col-lg-2 col-md-2">
                                                             <div class="avatar-md profile-user-wid mb-4">
-                                                                <img src="{{ asset('images/blood/Bp.png') }}" alt="" class="img-fluid">
+                                                                <img src="{{ asset('images/blood/On.png') }}" alt="" class="img-fluid">
                                                             </div>
                                                         </div>
                                                         @endif
@@ -104,7 +104,7 @@
                                                 <h3 class="d-flex  justify-content-center">QR code</h3>
                                                 <div class="d-flex  justify-content-center" >
                                                     {{-- <img src="data:image/png;base64,{{ base64_encode( QrCode::format('png')->size(200)->merge(public_path('logo.jpg'),0.3,true)->style('dot')->generate(Request::url()))}}" alt="" srcset=""> --}}
-                                                    <img src="data:image/png;base64,{{ 
+                                                    {{-- <img src="data:image/png;base64,{{ 
                                                     base64_encode( QrCode::format('png')
                                                     ->size(200)
                                                     ->errorCorrection('H')
@@ -112,7 +112,13 @@
                                                     ->style('dot')
                                                     ->eye('square')
                                                     ->generate(Request::url()))
-                                                    }}" alt="" srcset="">
+                                                    }}" alt="" srcset=""> --}}
+                                                    {!! QrCode::size(100)
+                                                    ->size(200)
+                                                    ->errorCorrection('H')
+                                                    ->style('dot')
+                                                    ->eye('square')
+                                                    ->generate(Request::url()); !!}
                                                 </div>
                                             </div>
                                         </div>
@@ -131,7 +137,7 @@
                                                             <div class="input-group-text">
                                                                 <i class="fa-solid fa-inbox "></i>
                                                             </div>
-                                                            <a href="mailto:{{$profilee->email}}" class="form-control"  > {{$profilee->email}}</a>
+                                                            <a href="mailto:{{$profilee->email}}" target="_blank"  class="form-control"  > {{$profilee->email}}</a>
                                                         </div>
                                                     </div>
                                                     @endif
@@ -142,7 +148,7 @@
                                                             <div class="input-group-text">
                                                                 <i class="fa-solid fa-phone"></i>
                                                             </div>
-                                                            <a href="{{$profilee->phone}}" class="form-control"  > {{$profilee->phone}}</a>
+                                                            <a href="{{$profilee->phone}}" target="_blank"  class="form-control"  > {{$profilee->phone}}</a>
                                                         </div>
                                                     </div>
                                                     @endif
@@ -153,7 +159,7 @@
                                                             <div class="input-group-text">
                                                                 <i class="fa-brands fa-facebook "></i>
                                                             </div>
-                                                            <a href="{{$profilee->facebook}}" class="form-control"  > {{$profilee->facebook}}</a>
+                                                            <a href="{{$profilee->facebook}}" target="_blank"  class="form-control"  > {{$profilee->facebook}}</a>
                                                         </div>
                                                     </div>
                                                     @endif
@@ -163,7 +169,7 @@
                                                         <div class="input-group">
                                                             <div class="input-group-text">
                                                                 <i class="fa-brands fa-whatsapp"></i>                                                </div>
-                                                                <a href="https://wa.me/{{$profilee->Whatsapp}}" class="form-control"  > {{$profilee->Whatsapp}}</a>
+                                                                <a href="https://wa.me/{{$profilee->Whatsapp}}"target="_blank"  class="form-control"  > {{$profilee->Whatsapp}}</a>
                                                             </div>
                                                     </div> 
                                                     @endif                         
@@ -174,7 +180,7 @@
                                                             <div class="input-group-text">
                                                                 <i class="fa-brands fa-linkedin "></i>
                                                             </div>
-                                                            <a href="{{$profilee->linkedin}}"  class="form-control"  > {{$profilee->linkedin}}</a>
+                                                            <a href="{{$profilee->linkedin}}" target="_blank"   class="form-control"  > {{$profilee->linkedin}}</a>
                                                         </div>
                                                     </div>
                                                     @endif
@@ -185,7 +191,7 @@
                                                             <div class="input-group-text">
                                                                 <i class="fa-brands fa-snapchat"></i>
                                                             </div>
-                                                            <a href="{{$profilee->Snapchat}}"  class="form-control"  > {{$profilee->Snapchat}}</a>
+                                                            <a href="{{$profilee->Snapchat}}" target="_blank"   class="form-control"  > {{$profilee->Snapchat}}</a>
                                                         </div>
                                                     </div>
                                                     @endif
@@ -196,7 +202,7 @@
                                                             <div class="input-group-text">
                                                                 <i class="fa-brands fa-twitter "></i>
                                                             </div>
-                                                            <a href="{{$profilee->twitter}}"  class="form-control"  > {{$profilee->twitter}}</a>
+                                                            <a href="{{$profilee->twitter}}" target="_blank"  class="form-control"  > {{$profilee->twitter}}</a>
                                                         </div>
                                                     </div>
                                                     @endif
@@ -207,7 +213,7 @@
                                                             <div class="input-group-text">
                                                                 <i class="fa-brands fa-github"></i>
                                                             </div>
-                                                            <a href="{{$profilee->github}}"  class="form-control"  > {{$profilee->github}}</a>
+                                                            <a href="{{$profilee->github}}" target="_blank"   class="form-control"  > {{$profilee->github}}</a>
                                                         </div>
                                                     </div>
                                                     @endif
@@ -218,7 +224,7 @@
                                                             <div class="input-group-text">
                                                                 <i class="fa-brands fa-instagram"></i>
                                                             </div>
-                                                            <a href="{{$profilee->Instagram}}"  class="form-control"  > {{$profilee->Instagram}}</a>
+                                                            <a href="{{$profilee->Instagram}}" target="_blank"  class="form-control"  > {{$profilee->Instagram}}</a>
                                                         </div>
                                                     </div>
                                                     @endif
@@ -229,7 +235,7 @@
                                                             <div class="input-group-text">
                                                                 <i class="fa-solid fa-globe"></i>
                                                             </div>
-                                                            <a href="{{$profilee->web1}}"  class="form-control"  > {{$profilee->web1}}</a>
+                                                            <a href="{{$profilee->web1}}" target="_blank"   class="form-control"  > {{$profilee->web1}}</a>
                                                         </div>
                                                     </div>
                                                     @endif
@@ -239,7 +245,7 @@
                                                         <div class="input-group">
                                                             <div class="input-group-text">
                                                                 <i class="fa-solid fa-globe"></i></div>
-                                                                <a href="{{$profilee->web2}}"  class="form-control"  > {{$profilee->web2}}</a>
+                                                                <a href="{{$profilee->web2}}" target="_blank"  class="form-control"  > {{$profilee->web2}}</a>
                                                             </div>
                                                     </div>
                                                     @endif
