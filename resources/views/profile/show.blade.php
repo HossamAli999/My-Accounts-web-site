@@ -103,7 +103,7 @@
                                             <div class="card-body ">
                                                 <h3 class="d-flex  justify-content-center">QR code</h3>
                                                 <div class="d-flex  justify-content-center" >
-                                                    {!! '<'.'?xml version="1.0"?>' !!} <!-- to make the qr code work -->
+                                                    {{-- {!! '<'.'?xml version="1.0"?>' !!} <!-- to make the qr code work --> --}}
                                                     {{-- <img src="data:image/png;base64,{{ base64_encode( QrCode::format('png')->size(200)->merge(public_path('logo.jpg'),0.3,true)->style('dot')->generate(Request::url()))}}" alt="" srcset=""> --}}
                                                     <img src="data:image/png;base64,{{ 
                                                     base64_encode( QrCode::format('png')
