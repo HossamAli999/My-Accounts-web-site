@@ -114,6 +114,7 @@
                                                     ->generate(Request::url()))
                                                     }}" alt="" srcset=""> --}}
                                                     {!! QrCode::size(100)
+                                                    ->format('svg')
                                                     ->size(200)
                                                     ->errorCorrection('H')
                                                     ->style('dot')
