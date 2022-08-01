@@ -106,7 +106,8 @@
                                                     {{-- <img src="data:image/png;base64,{{ base64_encode( QrCode::format('png')->size(200)->merge(public_path('logo.jpg'),0.3,true)->style('dot')->generate(Request::url()))}}" alt="" srcset=""> --}}
                                                     <img src="data:image/png;base64,{{ 
                                                     base64_encode( QrCode::format('png')
-                                                    ->size(200)
+                                                    ->size(300)
+                                                    ->margin(2)
                                                     ->errorCorrection('H')
                                                     ->merge(public_path('logo.jpg'),0.3,true)
                                                     ->style('dot')
