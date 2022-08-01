@@ -104,7 +104,7 @@
                                                 <h3 class="d-flex  justify-content-center">QR code</h3>
                                                 <div class="d-flex  justify-content-center" >
                                                     {{-- <img src="data:image/png;base64,{{ base64_encode( QrCode::format('png')->size(200)->merge(public_path('logo.jpg'),0.3,true)->style('dot')->generate(Request::url()))}}" alt="" srcset=""> --}}
-                                                    {{-- <img src="data:image/png;base64,{{ 
+                                                    <img src="data:image/png;base64,{{ 
                                                     base64_encode( QrCode::format('png')
                                                     ->size(200)
                                                     ->errorCorrection('H')
@@ -112,7 +112,7 @@
                                                     ->style('dot')
                                                     ->eye('square')
                                                     ->generate(Request::url()))
-                                                    }}" alt="" srcset=""> --}}
+                                                    }}" alt="" srcset="">
                                                     {{-- {!! QrCode::size(100)
                                                     ->format('svg')
                                                     ->size(200)
@@ -277,7 +277,7 @@
             <!--app-content closed-->
         </div>
 @else
-<?xml version="1.0" encoding="utf-8"?>
+
 <!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 800 600" style="enable-background:new 0 0 800 600;" xml:space="preserve">
