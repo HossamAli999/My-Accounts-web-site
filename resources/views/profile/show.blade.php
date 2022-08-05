@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xl-3">
-                                        <div class="card">
+                                        <div class=" card ">
                                             <div class="card-body ">
                                                 <h3 class="d-flex  justify-content-center">QR code</h3>
                                                 <div class="d-flex  justify-content-center" >
